@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 public class ExportedReceiver extends BroadcastReceiver {
     private static final String TAG = "ExportedReceiver";
+
     @Override
     public void onReceive(Context context, Intent intent) {
         StringBuilder sb = new StringBuilder();
