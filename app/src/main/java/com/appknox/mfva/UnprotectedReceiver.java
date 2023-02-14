@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 public class UnprotectedReceiver extends BroadcastReceiver {
     private static final String TAG = "UnprotectedReceiver";
+
     @Override
     public void onReceive(Context context, Intent intent) {
         StringBuilder sb = new StringBuilder();

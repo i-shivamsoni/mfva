@@ -1,8 +1,9 @@
 package com.appknox.mfva;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.security.NoSuchAlgorithmException;
 import java.security.NoSuchProviderException;
@@ -24,7 +25,7 @@ public class ExportedActivity extends AppCompatActivity {
 
         try {
             Cipher.getInstance("DES/ECB/ZeroBytePadding", "BC");
-        } catch (NoSuchAlgorithmException|NoSuchProviderException|NoSuchPaddingException e) {
+        } catch (NoSuchAlgorithmException | NoSuchProviderException | NoSuchPaddingException e) {
             // pass
         }
     }

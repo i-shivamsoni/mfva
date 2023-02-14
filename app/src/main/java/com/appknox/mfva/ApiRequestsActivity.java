@@ -1,19 +1,20 @@
 package com.appknox.mfva;
 
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.UUID;
-import java.util.Random;
 
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
@@ -27,7 +28,7 @@ public class ApiRequestsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_api_requests);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_api_requests);
+        androidx.appcompat.widget.Toolbar toolbar = (androidx.appcompat.widget.Toolbar) findViewById(R.id.toolbar_api_requests);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -88,11 +89,11 @@ public class ApiRequestsActivity extends AppCompatActivity {
                                     textViewLogs.append("  expiry:" + expiry0 + "\n");
                                 }
                             });
-                        } catch (IOException|JSONException e) {
+                        } catch (IOException | JSONException e) {
                             Snackbar.make(v, e.toString(), Snackbar.LENGTH_SHORT).show();
                         }
 
-                        if(token == null) {
+                        if (token == null) {
                             textViewLogs.post(new Runnable() {
                                 @Override
                                 public void run() {
@@ -122,7 +123,7 @@ public class ApiRequestsActivity extends AppCompatActivity {
                                     textViewLogs.append("  userid:" + id2 + "\n");
                                 }
                             });
-                        } catch (IOException|JSONException e) {
+                        } catch (IOException | JSONException e) {
                             Snackbar.make(v, e.toString(), Snackbar.LENGTH_SHORT).show();
                         }
 
@@ -130,7 +131,7 @@ public class ApiRequestsActivity extends AppCompatActivity {
                         final String user5 = UUID.randomUUID().toString().substring(24, 32),
                                 password5 = "pass0";
                         RequestBody body5 = RequestBody.create(JSON, "{\"user\":{\"username\":\"" +
-                                 user5 + "\",\"password\":\"" + password5 + "\"}}\n");
+                                user5 + "\",\"password\":\"" + password5 + "\"}}\n");
                         Request request5 = new Request.Builder()
                                 .url("http://vapi.appknox.io/user")
                                 .post(body5)
@@ -180,7 +181,7 @@ public class ApiRequestsActivity extends AppCompatActivity {
                                     textViewLogs.append("  system up since:" + uptime.trim() + "\n");
                                 }
                             });
-                        } catch (IOException|JSONException e) {
+                        } catch (IOException | JSONException e) {
                             Snackbar.make(v, e.toString(), Snackbar.LENGTH_SHORT).show();
                         }
 
